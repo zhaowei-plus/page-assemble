@@ -1,0 +1,62 @@
+@labelWidth: 90px;
+@inputWidth: 200px;
+
+.form-field {
+  text-align: center;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px;
+  position: relative;
+  border: 1px solid transparent;
+
+  &.hover {
+    border: 1px solid red;
+  }
+
+  &:hover {
+    border: 1px dotted gray;
+  }
+
+  &__label {
+    width: @labelWidth;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 10px;
+    text-align: right;
+    cursor: move;
+  }
+
+  &__input {
+    width: @inputWidth;
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    cursor: initial;
+
+    & > * {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &__operation {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    top: -4px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .form-field__operation {
+      display: flex;
+    }
+
+  }
+}

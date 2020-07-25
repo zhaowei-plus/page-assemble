@@ -1,0 +1,75 @@
+.virtual-search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  border: 1px solid #e9ecf0;
+  padding: 4px;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    padding: 4px;
+    border: 1px solid #e9ecf0;
+
+    .form-item {
+      width: auto;
+
+      .ant-form-item {
+        display: grid;
+        grid-template-columns: 60px 210px;
+        margin: 0 4px 10px;
+
+        &:before {
+          display: none;
+        }
+
+        .ant-form-item-label {
+          height: 32px;
+          padding-left: 10px;
+          line-height: 32px;
+          text-align: right;
+        }
+
+        .ant-form-item-control {
+          height: 32px;
+          line-height: 32px;
+
+          .ant-picker,
+          .ant-select,
+          .ant-calendar-picker,
+          .ant-form-item-control-input {
+            width: 100%;
+            //min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__actions {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+
+    .button-group {
+      height: 32px;
+      line-height: 32px;
+      width: 180px;
+      display: flex;
+
+      button {
+        width: 70px !important;
+        text-align: center;
+      }
+    }
+  }
+}
