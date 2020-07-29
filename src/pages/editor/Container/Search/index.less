@@ -10,40 +10,40 @@
 
   &__content {
     flex: 1;
-    display: flex;
+    //display: flex;
     padding: 4px;
+    flex-wrap: wrap;
     border: 1px solid #e9ecf0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 280px);
 
-    .form-item {
-      width: auto;
+    .ant-form-item {
+      display: grid;
+      grid-template-columns: 60px 210px;
+      margin: 0 4px 10px;
 
-      .ant-form-item {
-        display: grid;
-        grid-template-columns: 60px 210px;
-        margin: 0 4px 10px;
+      &:before {
+        display: none;
+      }
 
-        &:before {
-          display: none;
-        }
+      .ant-form-item-label {
+        height: 32px;
+        padding-left: 10px;
+        line-height: 32px;
+        text-align: right;
+      }
 
-        .ant-form-item-label {
-          height: 32px;
-          padding-left: 10px;
-          line-height: 32px;
-          text-align: right;
-        }
+      .ant-form-item-control {
+        height: 32px;
+        line-height: 32px;
 
-        .ant-form-item-control {
-          height: 32px;
-          line-height: 32px;
-
-          .ant-picker,
-          .ant-select,
-          .ant-calendar-picker,
-          .ant-form-item-control-input {
-            width: 100%;
-            //min-width: 200px;
-          }
+        .ant-picker,
+        .ant-select,
+        .ant-calendar-picker,
+        .ant-form-item-control-input {
+          width: 100%;
+          //min-width: 200px;
         }
       }
     }

@@ -7,10 +7,11 @@ import Select from './Select'
 import Switch from './Switch'
 import TextArea from './TextArea'
 
-
 import Form from './Form'
 import Search from './Search'
 import Table from './Table'
+
+import Button from './Button'
 
 export default {
   container: [
@@ -28,5 +29,7 @@ export default {
     Switch,
     TextArea,
   ],
-  other: []
+  other: [
+    Button,
+  ]
 }

@@ -1,17 +1,15 @@
 import React, { useRef } from 'react';
-import { useDrop, useDrag, DropTargetMonitor, DragSourceMonitor } from 'react-dnd'
+import { useDrop } from 'react-dnd'
 import { useConcent } from 'concent'
+import cs from 'classnames'
 
 import Search from '../Container/Search'
 import Buttons from '../Container/Buttons'
 import Table from '../Container/Table'
-import Draggable from '../Component/Draggable'
-
-import Container from './Container'
 
 import { ItemTypes } from '@/assets/constant';
 
-import './store'
+import '../store'
 
 import './index.less'
 
@@ -24,8 +22,6 @@ export default () => {
   const ref = useRef()
 
   const { containers = [] } = state
-
-  console.log('containers:', containers)
 
   // 页面只接受容器组件
   const [{ canDrop, isOverCurrent }, drop] = useDrop({
@@ -58,38 +54,42 @@ export default () => {
           container
         })
       }
-
-      // 内部容器拖动
-      if (type === ItemTypes.container.dragContainer) {
-        // TODO: 暂定 交换表单顺序，不需要处理
-      }
     }
   })
 
   drop(ref)
 
-  // id: 1
-  // pid: 0
-  // index: 1
-  // type: "Search"
-  // field: {title: "Search", type: "Search"}
-  // properties: {id: {…}}
-
-
   const renderContainer = (container) => {
     switch (container.type) {
       case 'Search': {
-        return <Search field={container} />
+        return <Search field={container} key={container.id}/>
+      }
+
+      case 'Buttons': {
+        return <Buttons field={container} key={container.id}/>
+      }
+
+      case 'Table': {
+        return <Table field={container} key={container.id}/>
       }
 
       default: {
-        return (<div>info</div>)
+        return (<div key={container.id}>info</div>)
       }
     }
   }
 
+  const hover = canDrop && isOverCurrent
+
   return (
-    <div className="page" ref={ref}>
+    <div
+      className={
+        cs('page', {
+          'hover': hover
+        })
+      }
+      ref={ref}
+    >
       {
         containers.map(item => renderContainer(item))
       }

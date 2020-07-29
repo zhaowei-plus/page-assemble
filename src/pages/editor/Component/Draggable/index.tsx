@@ -15,7 +15,6 @@ export default (props: any) => {
     className,
     children
   } = props
-  // const { name, title } = field
 
   const ref = useRef<any>()
 

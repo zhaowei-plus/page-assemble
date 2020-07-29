@@ -52,7 +52,7 @@ export default () => {
         >
           {
             other.map((item, index) => (
-              <MenuItem item={item} key={index} type="other" />
+              <MenuItem item={item} key={index} type={ItemTypes.component.menuField } />
             ))
           }
         </Panel>

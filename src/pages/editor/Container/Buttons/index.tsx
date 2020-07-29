@@ -3,10 +3,6 @@ import { useDrop, useDrag, DropTargetMonitor, DragSourceMonitor } from 'react-dn
 import { useConcent } from 'concent'
 import cs from 'classnames'
 
-import '../../store'
-
-import DragField from '../../Component/DragField'
-
 import { ItemTypes } from '@/assets/constant'
 
 import './index.less'
@@ -76,7 +72,7 @@ export default (props: any) => {
   return (
     <div
       className={
-        cs('buttons', {
+        cs('virtual-buttons', {
           'hover': hover
         })
       }

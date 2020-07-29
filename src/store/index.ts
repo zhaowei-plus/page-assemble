@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from 'redux'
 
-import loading from './loading'
+import editor from './editor'
+import page from './page'
 
 const reducers = combineReducers({
-  loading,
+  editor,
+  page,
 })
 
 export default createStore(reducers)
